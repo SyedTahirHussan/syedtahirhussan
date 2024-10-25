@@ -1,7 +1,7 @@
-👋 Welcome to Syed Tahir Hussan’s GitHub
+👋 Welcome to my GitHub profile
 
 🧠 About Me
-I am a researcher and software engineering professional with a strong focus on artificial intelligence advancements in the software development lifecycle. My work is dedicated to exploring and expanding the use of AI tools to enhance productivity, streamline workflows, and address emerging challenges in the software engineering process.
+I am a researcher and software engineering professional with a strong focus on artificial intelligence advancements in the software engineering. My work is dedicated to exploring and expanding the use of AI tools/agents to enhance productivity, streamline workflows, and address emerging challenges in the software engineering process.
 
 I aim to contribute to the community by sharing impactful AI-driven projects and insights, particularly at the intersection of AI and software engineering.
 
