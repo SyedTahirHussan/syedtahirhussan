@@ -1,6 +1,7 @@
 👋 Welcome to my GitHub profile
 
-🧠 About Me
+🧠 About Me![Screenshot_22-5-2024_175017_www daraz pk](https://github.com/user-attachments/assets/e10d680c-ef98-4a42-aa16-293ddf1ca834)
+
 I am a researcher and software engineering professional with a strong focus on artificial intelligence advancements in the software engineering. My work is dedicated to exploring and expanding the use of AI tools/agents to enhance productivity, streamline workflows, and address emerging challenges in the software engineering process.
 
 I aim to contribute to the community by sharing impactful AI-driven projects and insights, particularly at the intersection of AI and software engineering.
