@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syed Tahir Hussan — Stellar Atlas</title>
+<meta name="description" content="Syed Tahir Hussan — Distinguished Engineer & AI/ML/DL researcher. 15+ years across Pakistan, China & the Philippines. LLMs, generative AI, LLMOps, and AI-augmented software engineering, charted as a celestial research atlas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/portfolio.css">
+</head>
+<body>
+
+<div class="scan" id="scan"></div>
+<canvas id="starfield"></canvas>
+<div class="grid-lines"></div>
+<div class="vignette"></div>
+
+<span class="edge l">N 33.68° · E 73.05° — Islamabad</span>
+<span class="edge r">Stellar Atlas — Est. MMX</span>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#home" class="brand">
+    <span class="sigil"><b>STH</b></span>
+    <span class="who"><span class="nm">Syed Tahir Hussan</span><span class="rl">Distinguished Engineer · AI / ML Research</span></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about"><span class="n">I</span>About</a>
+    <a href="#research-map"><span class="n">II</span>Atlas</a>
+    <a href="#projects"><span class="n">III</span>Systems</a>
+    <a href="#experience"><span class="n">IV</span>Log</a>
+    <a href="#education"><span class="n">V</span>Education</a>
+    <a href="#research"><span class="n">VI</span>Research</a>
+    <a href="#certs"><span class="n">VII</span>Credentials</a>
+    <a href="#contact"><span class="n">VIII</span>Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="nbtn search-txt" id="cmdOpen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg><span>Navigate</span><span style="color:var(--faint)" id="kbdHint">⌘K</span></button>
+    <button class="nbtn icon" id="themeBtn" aria-label="Toggle theme"></button>
+    <button class="nbtn icon burger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">I · About</a><a href="#research-map">II · Atlas</a><a href="#projects">III · Systems</a>
+  <a href="#experience">IV · Log</a><a href="#education">V · Education</a><a href="#research">VI · Research</a>
+  <a href="#certs">VII · Credentials</a><a href="#contact">VIII · Contact</a>
+</div>
+
+<!-- HERO -->
+<header id="home">
+  <canvas id="hero-canvas"></canvas>
+  <div class="wrap hero-wrap">
+    <div class="coords reveal in">
+      <span><span class="pulse"></span>Available for research &amp; engineering leadership</span>
+      <span><i>Base ·</i> Islamabad, Pakistan</span>
+      <span><i>Span ·</i> 3 countries / 15+ years</span>
+    </div>
+    <h1 class="hero-name reveal in d1">
+      <span class="l1">Syed Tahir</span>
+      <span class="l2"><em>Hussan</em></span>
+    </h1>
+    <p class="hero-sub reveal in d2"><span id="typed"></span><span class="cur">▌</span></p>
+    <p class="hero-lede reveal in d3">An <b>AI / ML / DL researcher</b> and engineering leader charting the frontier where production software meets large language models — <b>LLMs, generative AI, LLMOps</b>, and the AI augmentation of the software engineering lifecycle.</p>
+    <div class="hero-cta reveal in d3">
+      <a class="btn btn-primary" href="#research-map"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>Chart the work</a>
+      <a class="btn btn-ghost" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>Make contact</a>
+    </div>
+    <div class="socials reveal in d4">
+      <a href="https://linkedin.com/in/syedtahirhussan" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.6h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z"/></svg></a>
+      <a href="https://github.com/syedtahirhussan" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49v-1.7c-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+      <a href="https://wa.me/923161589969" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.01c-.24.68-1.4 1.3-1.94 1.34-.5.04-1.14.18-3.68-.77-3.1-1.22-5.08-4.38-5.23-4.58-.15-.2-1.25-1.66-1.25-3.17s.79-2.25 1.07-2.56c.28-.31.61-.39.81-.39l.58.01c.19.01.44-.07.69.53.24.6.83 2.07.9 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.07 1.31 2.36 1.46.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.7.8 1.99.95.29.15.48.22.55.34.07.13.07.71-.17 1.39z"/></svg></a>
+      <a href="mailto:tahirsherazi786@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></a>
+    </div>
+  </div>
+  <div class="scrollcue"><span>scroll</span><span class="ln"></span></div>
+</header>
+
+<!-- INDEX -->
+<section class="wrap pad-t">
+  <div class="index reveal">
+    <div class="cell"><div class="v" data-target="15" data-suffix="+">0</div><div class="k">Years in practice</div></div>
+    <div class="cell"><div class="v" data-target="3">0</div><div class="k">Countries worked</div></div>
+    <div class="cell"><div class="v" data-target="35" data-suffix="+">0</div><div class="k">Certifications</div></div>
+    <div class="cell"><div class="v" data-target="5">0</div><div class="k">Flagship systems</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="wrap pad">
+  <div class="shead reveal">
+    <div class="lead">
+      <span class="kicker">I — Profile</span>
+      <h2>Engineering at scale,<br>research at the <em>frontier</em></h2>
+    </div>
+    <div class="plate">Plate<b>I</b></div>
+  </div>
+  <div class="about-grid">
+    <div class="reveal">
+      <p class="lede-xl">A builder and researcher operating where production software meets cutting-edge AI — bridging rigorous academic method with <em>hands-on system architecture.</em></p>
+      <p>I'm a <b>Distinguished Engineer and Project Manager</b> at the STH Research Center for Advanced Technologies (STHRCAT), with a track record of architecting production systems at scale and leading cross-functional teams from ideation to deployment.</p>
+      <p>My work spans <b>Large Language Models, generative AI, and LLMOps</b>, with a focus on embedding AI advancements directly into the software engineering lifecycle to lift productivity, quality, and scalability. I've shipped enterprise-grade IT, cloud, and custom software across web, mobile, macOS, and e-commerce.</p>
+      <p>My current research charts the <b>systematic mapping of AI4SE across the SDLC</b>, AI-augmented development, and autonomous AI-research systems — joining SLR / SMS / PRISMA methodology to working architecture. Certified across AI, cloud, and project management, and committed to mentoring the next generation of engineers.</p>
+    </div>
+    <aside class="dossier reveal d1">
+      <h3><span class="live"></span>Now observing</h3>
+      <dl>
+        <div class="drow"><dt>Building</dt><dd><b>STHASI</b> — an AI operating system & autonomous agent ecosystem</dd></div>
+        <div class="drow"><dt>Researching</dt><dd>AI augmentation of the software engineering lifecycle</dd></div>
+        <div class="drow"><dt>Mapping</dt><dd>1,000+ primary studies of AI4SE, 2019–2024</dd></div>
+        <div class="drow"><dt>Mentoring</dt><dd>Engineering teams on modern AI methodologies</dd></div>
+        <div class="drow"><dt>Based</dt><dd>Islamabad, Pakistan · Remote-first</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- CONSTELLATION / ATLAS -->
+<section id="research-map" class="wrap pad">
+  <div class="shead reveal">
+    <div class="lead">
+      <span class="kicker">II — The Atlas</span>
+      <h2>A constellation of <em>the work</em></h2>
+      <p class="sub">Every domain, system, and craft I work in, plotted as a star-chart. Hover a star to read its entry — the lines trace how the work connects.</p>
+    </div>
+    <div class="plate">Plate<b>II</b></div>
+  </div>
+  <div class="atlas-stage reveal">
+    <canvas id="atlas-canvas"></canvas>
+    <div class="atlas-legend">
+      <span><i style="background:#d8a43f"></i>Core thesis</span>
+      <span><i style="background:#9bbcdc"></i>Domains</span>
+      <span><i style="background:#e9c074"></i>Systems</span>
+      <span><i style="background:#8fa9c9"></i>Craft</span>
+    </div>
+    <div class="atlas-hint"><span class="dot"></span>Move across the chart — hover the stars</div>
+    <div class="atlas-tip" id="atlas-tip"><div class="t-kind"></div><div class="t-name"></div><div class="t-desc"></div></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="wrap pad">
+  <div class="shead reveal">
+    <div class="lead">
+      <span class="kicker">III — Flagship Systems</span>
+      <h2>Systems I'm <em>building</em></h2>
+      <p class="sub">Ambitious, research-grade platforms at the intersection of AI and software engineering.</p>
+    </div>
+    <div class="plate">Plate<b>III</b></div>
+  </div>
+  <div class="proj-list" id="projList"></div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="wrap pad">
+  <div class="shead reveal">
+    <div class="lead">
+      <span class="kicker">IV — The Log</span>
+      <h2>15+ years across <em>three countries</em></h2>
+      <p class="sub">From freelance full-stack work to leading engineering organizations.</p>
+    </div>
+    <div class="plate">Plate<b>IV</b></div>
+  </div>
+  <div class="log" id="log"></div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="wrap pad">
+  <div class="shead reveal">
+    <div class="lead">
+      <span class="kicker">V — Foundation</span>
+      <h2>Academic <em>grounding</em></h2>
+      <p class="sub">Software engineering and computer science, extended by elite AI specializations.</p>
+    </div>
+    <div class="plate">Plate<b>V</b></div>
+  </div>
+  <div class="edu-grid">
+    <div class="edu reveal">
+      <div class="edu-top"><div class="edu-inst">Riphah International University</div><span class="edu-gpa">3.85 / 4.0</span></div>
+      <div class="edu-deg">M.S. — Software Engineering</div>
+      <div class="edu-date">Feb 2023 – Aug 2025 · Pakistan</div>
+      <div class="edu-thesis"><span>Thesis</span>Augmenting the Software Engineering Lifecycle: A Systematic Mapping Study of Artificial Intelligence Advancements</div>
+    </div>
+    <div class="edu reveal d1">
+      <div class="edu-top"><div class="edu-inst">Southwestern University</div><span class="edu-gpa">3.7 / 4.0</span></div>
+      <div class="edu-deg">B.S. — Computer Science</div>
+      <div class="edu-date">Mar 2012 – Mar 2016 · Philippines</div>
+      <div class="edu-thesis"><span>Thesis</span>Web and Mobile Service Access via Wireless Technology</div>
+    </div>
+  </div>
+  <div class="creds">
+    <div class="cred reveal d2"><span class="seal duke"><b>D</b></span><div><h4>LLM Operations</h4><p>LLMOps Specialization · Duke University, USA · 2024</p></div></div>
+    <div class="cred reveal d3"><span class="seal mich"><b>M</b></span><div><h4>Generative AI</h4><p>Specialization · University of Michigan, USA · 2024</p></div></div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research" class="wrap pad">
+  <div class="shead reveal">
+    <div class="lead">
+      <span class="kicker">VI — Inquiry</span>
+      <h2>Advancing AI for <em>software engineering</em></h2>
+      <p class="sub">Rigorous, methodology-driven research bridging AI and the SDLC.</p>
+    </div>
+    <div class="plate">Plate<b>VI</b></div>
+  </div>
+  <div class="res-grid">
+    <div class="res-focus reveal">
+      <h3>Research focus</h3>
+      <ul id="resList"></ul>
+    </div>
+    <div class="pub reveal d1">
+      <span class="badge">Published · 2025</span>
+      <h4>Securing IoT Devices in Healthcare: Challenges and Solutions</h4>
+      <div class="auth">Azeem Akram, Muhammad Ismail, <b>Syed Tahir Hussan</b>, Aqsa Arshad, Saad Ishaq Qureshi &amp; Dr. Jawaid Iqbal</div>
+      <div class="venue">Spectrum of Engineering Sciences · 3(5), 133–142</div>
+      <a class="read" href="https://thesesjournal.com/index.php/1/article/view/341" target="_blank" rel="noopener">Read the paper<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs" class="wrap pad">
+  <div class="shead reveal">
+    <div class="lead">
+      <span class="kicker">VII — Credentials</span>
+      <h2>35+ certifications &amp; <em>specializations</em></h2>
+      <p class="sub">From Google, AWS, IBM, and more — across AI, cloud, data, and project management.</p>
+    </div>
+    <div class="plate">Plate<b>VII</b></div>
+  </div>
+  <div class="cert-bar reveal" id="certBar"></div>
+  <div class="cert-grid reveal" id="certGrid"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="wrap pad">
+  <div class="contact reveal">
+    <span class="kicker">VIII — Transmit</span>
+    <h2>Let's chart something <em>remarkable</em></h2>
+    <p>Open to research collaborations, doctoral opportunities, engineering leadership roles, and consulting. Recruiters, universities, and teams — reach out.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="mailto:tahirsherazi786@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>Email me</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/syedtahirhussan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.6h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z"/></svg>Connect on LinkedIn</a>
+    </div>
+    <div><button class="mailcopy" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="lbl">tahirsherazi786@gmail.com</span></button></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <div class="foot-l">
+      <span class="sigil"><b>STH</b></span>
+      <small>Syed Tahir Hussan — Distinguished Engineer &amp; AI / ML researcher. Charted from Islamabad, Pakistan.</small>
+    </div>
+    <div class="foot-soc">
+      <a href="https://linkedin.com/in/syedtahirhussan" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.6h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z"/></svg></a>
+      <a href="https://github.com/syedtahirhussan" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49v-1.7c-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+      <a href="https://wa.me/923161589969" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.01c-.24.68-1.4 1.3-1.94 1.34-.5.04-1.14.18-3.68-.77-3.1-1.22-5.08-4.38-5.23-4.58-.15-.2-1.25-1.66-1.25-3.17s.79-2.25 1.07-2.56c.28-.31.61-.39.81-.39l.58.01c.19.01.44-.07.69.53.24.6.83 2.07.9 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.07 1.31 2.36 1.46.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.7.8 1.99.95.29.15.48.22.55.34.07.13.07.71-.17 1.39z"/></svg></a>
+      <a href="mailto:tahirsherazi786@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></a>
+    </div>
+    <div class="foot-note">© <span id="yr"></span> Syed Tahir Hussan<br>Press <kbd>⌘K</kbd> to navigate the atlas</div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<!-- COMMAND PALETTE -->
+<div class="cmd-overlay" id="cmdOverlay">
+  <div class="cmd-box" role="dialog" aria-label="Command palette">
+    <div class="cmd-input">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg>
+      <input id="cmdInput" type="text" placeholder="Jump to a plate or run a command…" autocomplete="off" spellcheck="false">
+      <span class="esc">esc</span>
+    </div>
+    <div class="cmd-list" id="cmdList"></div>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script>
+  /* inject project + research lists (kept inline so data stays the single source) */
+  (function(){
+    var D=window.STH;
+    var pl=document.getElementById('projList');
+    var gh='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49v-1.7c-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>';
+    var arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>';
+    D.projects.forEach(function(p,i){
+      var n=String(i+1).padStart(2,'0');
+      var el=document.createElement('article');
+      el.className='proj reveal';
+      el.innerHTML=
+        '<div class="pidx">'+n+'</div>'+
+        '<div class="pmain">'+
+          '<div class="ptop"><div class="pname">'+p.name+'</div><div class="pkind">'+p.kind+'</div></div>'+
+          '<p class="pdesc">'+p.desc+'</p>'+
+          '<div class="tags">'+p.tags.map(function(t){return '<span>'+t+'</span>';}).join('')+'</div>'+
+        '</div>'+
+        '<div class="pside">'+
+          '<span class="pstatus '+(p.status||'')+'"><i></i>'+p.statusLabel+'</span>'+
+          '<a class="plink" href="https://github.com/syedtahirhussan" target="_blank" rel="noopener">'+gh+'Repository'+arrow+'</a>'+
+        '</div>';
+      pl.appendChild(el);
+    });
+    var rl=document.getElementById('resList');
+    D.research.forEach(function(r,i){
+      var li=document.createElement('li');
+      li.innerHTML='<span class="num">0'+(i+1)+'</span><span><b>'+r.t+'</b> — '+r.d+'</span>';
+      rl.appendChild(li);
+    });
+  })();
+</script>
+<script src="assets/atlas.js"></script>
+<script src="assets/portfolio.js"></script>
+<script src="assets/tweaks.js"></script>
+
+</body>
+</html>
